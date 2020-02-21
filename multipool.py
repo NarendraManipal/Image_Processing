@@ -22,7 +22,7 @@ def change_color_fuzzycmeans(cluster_membership, clusters):
 
 
 def readimage():
-    folder = 'image-cancer/'
+    folder = 'test/'
     list_images = os.listdir(folder)
     list_img = []
     for i in list_images:
@@ -205,14 +205,14 @@ def main_loop(rgb_img, index):
     fig.savefig("Output/Image_"+str(index+1)+".png")
 
 
-initial_time = time()
-
 if __name__ == '__main__':
     processes = list()
     list_img = readimage()
     n_data = len(list_img)
+    c_count = []
 
-    pool = Pool(processes=1)
+    initial_time = time()
+    pool = Pool(processes=4)
     for index, rgb_img in enumerate(list_img):
         pool.apply_async(main_loop, args=(rgb_img, index))
 

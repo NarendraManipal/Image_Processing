@@ -6,8 +6,6 @@ import cv2
 from time import time
 import concurrent.futures
 
-initial_time = time()
-
 #PreProcessing using median filter
 def median_filter(filter_img):
     median = cv2.medianBlur(filter_img, 5)
@@ -20,7 +18,7 @@ def change_color_fuzzycmeans(cluster_membership, clusters):
     return img
 
 def readimage():
-    folder = 'image-cancer/'
+    folder = 'test/'
     list_images = os.listdir(folder)
     list_img = []
     for i in list_images:
@@ -142,6 +140,7 @@ def morphology(bwimage):
 list_img = readimage()
 n_data = len(list_img)
 clusters = [2,3,6]
+initial_time = time()
 
 # looping every images
 for index, rgb_img in enumerate(list_img):
