@@ -218,12 +218,5 @@ if __name__ == '__main__':
 
     pool.close()
     pool.join()
-    '''for index, rgb_img in enumerate(list_img):
-        process = Process(target=main_loop, args=(rgb_img, index))
-        process.start()
-        processes.append(process)
-
-    for p in processes:
-        p.join()'''
 
     print("Total time: ", time() - initial_time, "seconds")
