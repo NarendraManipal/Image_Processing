@@ -185,7 +185,7 @@ def main_loop(rgb_img, index):
         ret, seg_img = cv2.threshold(fuzzy_img, np.max(
             fuzzy_img)-1, 255, cv2.THRESH_BINARY)
 
-        print('Fuzzy time for cluster', cluster)
+        print('Fuzzy time for Image ',index+1,'cluster', cluster)
         new_time = time()
         print(new_time - old_time, 'seconds')
         seg_img_1d = seg_img[:, :, 1]
