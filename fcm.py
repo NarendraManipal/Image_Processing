@@ -18,7 +18,7 @@ def change_color_fuzzycmeans(cluster_membership, clusters):
     return img
 
 def readimage():
-    folder = 'test/'
+    folder = 'image-cancer/'
     list_images = os.listdir(folder)
     list_img = []
     for i in list_images:
@@ -135,7 +135,7 @@ def morphology(bwimage):
     kernel = np.ones((4, 4), np.uint8)
     erosion = cv2.erode(bwimage, kernel)
     dilation = cv2.dilate(erosion, kernel)
-    return dilation
+    return dilation 
     
 list_img = readimage()
 n_data = len(list_img)

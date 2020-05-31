@@ -22,7 +22,7 @@ def change_color_fuzzycmeans(cluster_membership, clusters):
 
 
 def readimage():
-    folder = 'test/'
+    folder = 'image-cancer/'
     list_images = os.listdir(folder)
     list_img = []
     for i in list_images:
