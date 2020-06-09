@@ -9,7 +9,7 @@ import subprocess
 # Process imports
 import numpy as np
 import matplotlib.pyplot as plt
-import skfuzzy as fuzz
+import skfuzzy as fuzzy
 import os
 import cv2
 from time import time
@@ -835,7 +835,7 @@ class Application:
             multiProcessing = MultiProcessing(
                 self.list_queue, self.runtime_queue)
         if self.radio_var.get() == 3:
-            cuda = MultiProcessing(self.list_queue, self.runtime_queue)
+            cuda = CUDA(self.list_queue, self.runtime_queue)
 
     def open_explorer(self):
         subprocess.Popen('explorer ' + str(os.getcwd()) + '"\Output"')
